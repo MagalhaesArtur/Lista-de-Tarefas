@@ -16,6 +16,7 @@ body {
   );
 }
 .newTaskContainer {
+  padding: 30px;
   width: 600px;
   min-height: 500px;
   max-height: 100vh;
@@ -46,7 +47,9 @@ body {
   transition-duration: 400ms;
   transition-timing-function: ease-in-out;
   border-radius: 5px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
 }
+
 .form {
   width: 90%;
   justify-content: space-around;
@@ -56,29 +59,71 @@ body {
   padding: 15px;
   font-size: 17px;
   border-radius: 10px;
-
-  background-color: rgb(184, 136, 65);
+  background-color: rgb(184, 99, 65);
   border: none;
   color: #eee;
   transition-property: all;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: ease;
   transition-delay: 100ms;
   transition-duration: 400ms;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
 }
 .addTask:hover {
   cursor: pointer;
-  background-color: rgb(255, 30, 0);
+  background-color: rgb(0, 38, 255);
 }
 .newTaskBar:focus,
 .newTaskBar:hover {
   outline: none;
-  border: rgb(255, 30, 0) 3px solid;
+  border: rgb(0, 38, 255) 3px solid;
 }
 @font-face {
   font-family: GigaSansBlack;
   src: url(./fonts/giga-sans-black.otf);
 }
+.error {
+  padding: 10px;
+  width: 70%;
+  font-size: 18px;
+  border: rgb(255, 17, 0) 3px solid;
+  transition-property: border;
+  transition-delay: 100ms;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+.concludes {
+  width: 30px;
+}
+.error::placeholder {
+  color: rgba(245, 0, 0, 0.795);
+}
+.task1 {
+  display: flex;
+}
+.delete {
+  width: 30px;
+  margin-right: 10px;
+}
+.yesTask {
+  color: rgb(71, 189, 16);
+}
+.delete:hover {
+  cursor: pointer;
+}
+.concludes:hover {
+  cursor: pointer;
+}
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 .tasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #eee;
   padding: 30px 20px;
   margin-top: 60px;
