@@ -23,17 +23,18 @@ const addTaskItem = function () {
   deleteItem.classList.add("delete");
   concludeItem.addEventListener("click", () => {
     if (!task.textContent.includes("✓")) {
-      task.classList.add("complete");
       task.innerText += "  ✓";
       task.classList.add("yesTask");
+      updateLS();
     } else if (task.textContent.includes("✓")) {
-      task.classList.remove("complete");
       task.innerText = task.textContent.slice(0, -3);
       task.classList.remove("yesTask");
+      updateLS();
     }
   });
   deleteItem.addEventListener("click", () => {
     newTask.remove();
+    updateLS();
   });
   concludeItem.setAttribute(
     "src",
@@ -72,8 +73,8 @@ const updateLS = function () {
   const tasks3 = tasks.childNodes;
   const localLS = [...tasks3].map((task) => {
     const content = task.firstChild;
-    const isCompleted = content.classList.contains("complete");
-    return { description: content.innerText, isCompleted };
+    const yesTask = content.classList.contains("yesTask");
+    return { description: content.innerText, isCompleted: yesTask };
   });
   localStorage.setItem("tasks4", JSON.stringify(localLS));
 };
@@ -90,8 +91,9 @@ const refresh = () => {
     const task = document.createElement("p");
 
     task.innerText = task5.description;
+    updateLS();
     if (task5.isCompleted) {
-      task.classList.add("complete");
+      task.classList.add("yesTask");
     }
 
     const deleteItem = document.createElement("img");
@@ -133,6 +135,7 @@ const refresh = () => {
     tasks.appendChild(newTask);
     newTaskBar.value = "";
   }
+  updateLS();
 };
 
 refresh();
