@@ -17,7 +17,7 @@ body {
 }
 .newTaskContainer {
   padding: 30px;
-  width: 600px;
+  width: 800px;
   min-height: 500px;
   max-height: 100vh;
   border: 4px solid #eee;
@@ -70,12 +70,12 @@ body {
 }
 .addTask:hover {
   cursor: pointer;
-  background-color: rgb(0, 38, 255);
+  background-color: rgb(15, 145, 11);
 }
 .newTaskBar:focus,
 .newTaskBar:hover {
   outline: none;
-  border: rgb(0, 38, 255) 3px solid;
+  border: rgb(15, 145, 11) 3px solid;
 }
 @font-face {
   font-family: GigaSansBlack;
@@ -107,7 +107,7 @@ body {
   margin-right: 10px;
 }
 .yesTask {
-  color: rgb(71, 189, 16);
+  color: rgb(15, 145, 11);
 }
 .delete:hover {
   cursor: pointer;
