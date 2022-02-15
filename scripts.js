@@ -70,7 +70,6 @@ const buttonHandler = function (event) {
 };
 const updateLS = function () {
   const tasks3 = tasks.childNodes;
-  console.log(tasks3);
   const localLS = [...tasks3].map((task) => {
     const content = task.firstChild;
     const isCompleted = content.classList.contains("complete");
@@ -79,9 +78,11 @@ const updateLS = function () {
   localStorage.setItem("tasks4", JSON.stringify(localLS));
 };
 
-const refresh = function () {
+const refresh = () => {
   const tasksFromLS = JSON.parse(localStorage.getItem("tasks4"));
-  for (let task5 of tasksFromLS) {
+
+  if (!tasksFromLS) return;
+  for (const task5 of tasksFromLS) {
     let newTask = document.createElement("div");
     let task1 = document.createElement("div");
     task1.classList.add("task1");
@@ -133,6 +134,7 @@ const refresh = function () {
     newTaskBar.value = "";
   }
 };
+
 refresh();
 addTaskBtn.addEventListener("click", buttonHandler);
 addTaskBtn.addEventListener("click", validateInput);
