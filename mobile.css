@@ -7,3 +7,6 @@
 .newTaskBar::placeholder {
   font-size: 14px;
 }
+.newTaskContainer {
+  border: none;
+}
