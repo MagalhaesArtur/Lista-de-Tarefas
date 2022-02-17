@@ -95,6 +95,7 @@ body {
 }
 .concludes {
   width: 30px;
+  height: 30px;
 }
 .error::placeholder {
   color: rgba(245, 0, 0, 0.795);
@@ -105,6 +106,7 @@ body {
 .delete {
   width: 30px;
   margin-right: 10px;
+  height: 30px;
 }
 .yesTask {
   color: rgb(15, 145, 11);
@@ -119,6 +121,8 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .tasks {
   display: flex;

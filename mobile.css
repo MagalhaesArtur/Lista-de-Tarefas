@@ -1,0 +1,9 @@
+.form {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.newTaskBar::placeholder {
+  font-size: 14px;
+}
